@@ -276,7 +276,7 @@ main.wadah {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 10pz 14px;
+    gap: 10px 14px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -368,7 +368,7 @@ main.wadah {
     padding: 8px 12px;
     border: 1px solid var(--hijau-muda);
     border-radius: 8px;
-    background: var(--aksen-terang);
+    background: var(--putih);
     color: var(--hijau-tua);
     font-size: 0.85rem;
     font-weight: 600;
@@ -386,8 +386,8 @@ main.wadah {
     min-width: 20px;
     padding: 0 6px;
     border-radius: 999px;
-    background: var(--aksen);
-    color: var(--hijau-tua);
+    background: var(--merah);
+    color: var(--putih);
     font-size: 0.75rem;
     font-weight: 700;
     line-height: 20px;
@@ -1462,6 +1462,23 @@ body[data-halaman="sukses"] #halaman-sukses {
         padding-bottom: 28px;
     }
 
+    .kepala-isi {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 10px 14px;
+    }
+
+    .logo {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .logo-nama {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
     .judul-halaman {
         font-size: 1.2rem;
     }
@@ -1473,15 +1490,17 @@ body[data-halaman="sukses"] #halaman-sukses {
         font-size: 16px;
     }
 
-    .kepala-isi {
-        margin-left: auto;
-    }
-
     .cari {
-        order: 3;
-        flex: 1 1 100%;
+        grid-column: 1 / -1;
+        grid-row: 2;
         max-width: none;
         margin: 0;
+    }
+
+    .navigasi {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
     }
 
     .tata-katalog {
